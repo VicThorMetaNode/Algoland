@@ -1,0 +1,186 @@
+/*
+=============== 
+VARIABLES
+===============
+*/
+
+
+:root {
+    /*----------------------------- FONTS FAMILY ------------------------*/
+   
+    --font-b6: 'B612', sans-serif;
+    --font-dongle: 'Dongle', sans-serif;
+    --font-geo: 'Geo', sans-serif;
+    --font-jomhuria: 'Jomhuria', cursive;
+    --font-wire: 'Wire One', sans-serif;
+    --font-press: 'Press Start 2P', cursive;
+    --font-bungee: 'Bungee Shade', cursive;
+    --font-mulish: 'Mulish', sans-serif;
+    --font-nunito: 'Nunito', sans-serif;
+    --font-nunito-sans:'Nunito Sans', sans-serif;
+    --font-manrope:'Manrope', sans-serif;
+  
+    /*FONTS SIZES*/
+    --font-size-13: 0.7rem;
+    --font-size-15: 0.875rem;
+    --font-size-17: 0.920rem;
+    --font-size-20: 1rem;
+    --font-size-22: 1.10rem;
+    --font-size-24: 1.25rem;
+    --font-size-26: 1.70rem;
+    --font-size-30: 2rem;
+    --font-size-34: 2.5rem;
+    --font-size-36: 3rem;
+    --font-size-42: 3.5rem;
+    --font-size-50: 4rem;
+  
+  
+    /*FONTS COLORS*/
+    --color-primary: #01051e;
+    --color-bg-primary: #070e22;
+    --color-black: #1B1B1B;
+    --color-outer-space: #2D383A;
+    --color-algopulse:#1e1e20;
+    --color-ant-dark: rgb(0, 17, 33);
+    --color-cosmic-blue: hsl(241, 81%, 22%);
+    --color-black-x: #000000e1;
+    --color-blue: #2E5894;
+    --color-blue-lg: hsl(215, 53%, 43%);
+    --color-amethyst: #64609A;
+    --color-hyperlink: #89adf5;;
+    --color-hyperlink-hover: #5b8df1;
+    --color-black: #008080;
+    --color-zil: hsl(173, 99%, 43%);
+    --color-zil-dark: #009987bc;
+    --color-green: #9DE093;
+    --color-yellow-green: #C5E17A;
+    --color-middle-green: #4D8C57;
+    --color-green-chrome: #6CA67C;
+    --color-green-jungle: #29AB87;
+    --color-green-forest: #5FA777;
+    --color-eggplant: #614051;
+    --color-cyber-grape: #58427C;
+    --color-lilac: #DB91EF;
+    --color-bubble-gum: #FFD3F8;
+    --color-shampoo:#FFCFF1;
+    --color-red: 	#ED0A3F;
+    --color-brick: #C62D42;
+    --color-orange-red: #FF5349;
+    --color-pink: #FC5A8D;
+    --color-macaroni-cheese:#FFB97B;
+    --color-peach: #FFD0B9;
+    --color-white: #fff;
+    --color-coconut: #FEFEFE;
+    --color-soap: #CEC8EF;
+    --color-cadet:#A9B2C3;
+    --color-zilver: #A6A6A6;
+    --color-gar-blue: #C8C8CD;
+    --color-wolf: #D9D6CF;
+    --color:blue-violet: #766EC8;
+    --color-lemon: #FFFF38;
+    --color-canary: #FFFF99;
+    --color-lemon-cream: #FDFF00;
+    --color-daffodil: #FFFF31;
+   
+    
+    
+  
+    /*TRANSITIONS DECOR & Co*/
+    --transition: all 0.3s linear;
+    --light-spacing: 0.1rem;
+    --spacing: 0.3rem;
+    --deep-spacing:0.5rem;
+    --max-width-1170: 1170px;
+    --fixed-width-4: 450px;
+    --fixed-width-6: 620px;
+    --animate-duration: 1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1;
+    --transition: all 0.3s linear;
+    --light-shadow: 0px 5px 10px 5px rgba(138, 134, 134, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --light-shadow-zil: 0 5px 15px #00ccb4;
+    --dark-shadow-zil: 0 5px 15px #009987;
+  
+    /*BORDERS OPTIONS*/
+    --border-dotted: dotted;
+    --border-dashed: dashed;
+    --border-solid: solid;
+    --border-none: none;
+    --border-groove: groove;
+  
+    /*BORDERS WIDTH*/
+    --border-w1: 0.1rem;
+    --border-w2: 0.2rem;
+    --border-w3: 0.3rem;
+    --border-w4: 0.4rem;
+  
+    /*BORDERS RADIUS*/
+    --border-r025: 0.25rem;
+    --border-r1: 1rem;
+    --border-r2: 2rem;
+    --border-r3: 3rem;
+    --border-r4: 4rem;
+  
+  }
+  
+  /*
+  =============== 
+  GLOBAL STYLES
+  ===============
+  */
+  
+ 
+  
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      background: var(--color-primary) ;
+      color: var(--color-soap);
+      line-height: 1.5;
+      font-size: 0.875rem;
+    }
+  
+    ul {
+      list-style-type: none !important;
+    }
+    
+    a {
+      font-size: var(--font-size-20);
+      text-decoration: none;
+      color: var(--color-hyperlink);
+    }
+  
+    a:hover{
+      color: var(--color-hyperlink-hover);
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4 {
+      letter-spacing: var(--spacing);
+      text-transform: capitalize;
+    }
+  
+    h1 {
+      font-size: var(--font-size-36);
+    }
+    h2 {
+      font-size: var(--font-size-30);
+    }
+    h3 {
+      font-size: var(--font-size-24);
+    }
+    h4 {
+      font-size: var(--font-size-20);
+    }
+    p {
+      font-size: var(--font-size-15);
+    }
