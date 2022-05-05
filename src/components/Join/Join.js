@@ -3,6 +3,9 @@ import React, { useState} from 'react'
 //Import router
 import { Link} from "react-router-dom"
 
+//Import CCS
+import './Join.css'
+
 
 
 const Join = () => {
