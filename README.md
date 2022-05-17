@@ -1,6 +1,6 @@
 # Full Stack **React** Chat
 
-This project has been fully built in **ReactJs** **ExpressJs** & **NodeJs** using **Socket.io**
+> This project is currently under construction in **ReactJs** **ExpressJs** & **NodeJs** using **Socket.io**
 
 <p>📦NPM Packages used:</p>
 <p>✔️Cors: provides plenty of UI components to enrich any web applications</p>
@@ -14,4 +14,4 @@ This project has been fully built in **ReactJs** **ExpressJs** & **NodeJs** usin
 <p>✔️Query-String: the standard way to write Redux logic</p>
 
 
-> This website is constantly evolving since march 2022. Stay tuned for more updates
+
