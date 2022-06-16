@@ -9,7 +9,7 @@ import Layout from "./components/Layout";
 //import routes
 import Homepage from "./components/Homepage";
 import Join from "./components/Join/Join";
-import Chat from "./components/Chat/Chat";
+import Chat from "./components/Chat/ChatTest";
 
 import "./index.css";
 
@@ -22,7 +22,6 @@ const App = () => {
         <div className="routes">
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-
             <Route path="/join" element={<Join />} />
             <Route path="/chat" element={<Chat />} />
           </Routes>
