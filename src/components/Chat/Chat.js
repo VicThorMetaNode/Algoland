@@ -1,48 +1,45 @@
-import React, { useState, useEffect } from 'react'
-
-//import Queries
-import queryString from 'query-string'
+import React, { useState, useEffect } from "react";
 
 //import socket client
-import io from "socket.io-client"
+import { io } from "socket.io-client";
 
 //Import CCS
-import './Chat.css'
+import "./Chat.css";
 
+//import Queries
+const queryString = require("query-string");
 
-
-let socket;
-
-
-const Chat = ({ location }) => { // Location is from React Router and can be used as prop
-  const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
+const Chat = ({ location }) => {
+  // Location is from React Router and can be used as prop
+  const [name, setName] = useState("");
+  const [room, setRoom] = useState("");
 
   //define endpoint
-  const ENDPOINT = 'localhost:5000';
+  const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
-  //at the beginning if want to check what data we got back from react router we can also
-  //const data = queryString.parse(location.search);
-  //console.log(location.search);
-  //console.log(data)
-  const { name, room } = queryString.parse(location.search); //location.search gives us URL back from React Router: querystring.parse() method is used to parse a URL query string into an object that contains the key and pair values of the query URL
+    const { name, room } = queryString.parse(location.search); //location.search gives us URL back from React Router: querystring.parse() method is used to parse a URL query string into an object that contains the key and pair values of the query URL
 
-    socket = io(ENDPOINT);
-  
+    const socket = io(ENDPOINT);
+
     setName(name);
     setRoom(room);
 
-    socket.emit('join', { name, room }, (error) => { // socket.emit convention: see doc: 1st pass a message then name and room
-      if(error) {
+    socket.emit("join", { name, room }, (error) => {
+      // socket.emit convention: see doc: 1st pass a message then name and room
+      if (error) {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]); //using an array here specified to useEffect to change every time ones of these values change 
-  
+  }, [ENDPOINT, location.search]); //using an array here specified to useEffect to change every time ones of these values change
+
   return (
-    <h1>Chat</h1>
+    <div className="outerContainer">
+      <h1>Chat</h1>
+      <p>{name}</p>
+      <p>{room}</p>
+    </div>
   );
-}
+};
 
 export default Chat;
