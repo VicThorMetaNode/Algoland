@@ -1,45 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-//import socket client
-import { io } from "socket.io-client";
+function ChatTest({ socket, username, room }) {
+  //track current message
+  const [currentMessage, setCurrentMessage] = useState("");
+  //send message w/ socket emit
+  const sendMessage = async () => {
+    if (currentMessage !== "") {
+      const messageData = {
+        room: room,
+        author: username,
+        message: currentMessage,
+        time:
+          new Date(Date.now()).getHours() +
+          ":" +
+          new Date(Date.now()).getMinutes(),
+      };
 
-//Import CCS
-import "./Chat.css";
+      await socket.emit("send_message", messageData);
+    }
+  };
 
-//import Queries
-const queryString = require("query-string");
-
-const Chat = ({ location }) => {
-  // Location is from React Router and can be used as prop
-  const [name, setName] = useState("");
-  const [room, setRoom] = useState("");
-
-  //define endpoint
-  const ENDPOINT = "localhost:5000";
-
+  //receive message w/ socket emit
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search); //location.search gives us URL back from React Router: querystring.parse() method is used to parse a URL query string into an object that contains the key and pair values of the query URL
-
-    const socket = io(ENDPOINT);
-
-    setName(name);
-    setRoom(room);
-
-    socket.emit("join", { name, room }, (error) => {
-      // socket.emit convention: see doc: 1st pass a message then name and room
-      if (error) {
-        alert(error);
-      }
+    socket.on("receive_message", (data) => {
+      console.log(data);
     });
-  }, [ENDPOINT, location.search]); //using an array here specified to useEffect to change every time ones of these values change
+  }, [socket]);
 
   return (
-    <div className="outerContainer">
-      <h1>Chat</h1>
-      <p>{name}</p>
-      <p>{room}</p>
+    <div>
+      <div>
+        <h1>Live Chat</h1>
+      </div>
+      <div>
+        <input
+          type="text"
+          value={currentMessage}
+          placeholder="Algolab message"
+          onChange={(event) => {
+            setCurrentMessage(event.target.value);
+          }}
+        />
+        <button onClick={sendMessage}>&#9658;</button>
+      </div>
     </div>
   );
-};
+}
 
-export default Chat;
+export default ChatTest;

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 //Import router
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Chat from "../Chat/ChatTest";
 import io from "socket.io-client";
 
 //Import CCS
 import "./Join.css";
+const ENDPOINT = "http://localhost:5000";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect(ENDPOINT);
 
 const Join = () => {
   const [username, setUsername] = useState("");
@@ -40,15 +42,13 @@ const Join = () => {
             onChange={(event) => setRoom(event.target.value)}
           />
           {/*we use event.target.value to store the data input*/}
-          <Link
-            onClick={joinRoom}
-            to={`/chat?username=${username}&room=${room}`}
-          >
-            <button className="button mt-20" type="submit">
-              Sign In
-            </button>
-          </Link>
+          {/* <Link to={`/chat?username=${username}?room=${room}&socket=${socket}`}> */}
+          <button onClick={joinRoom} className="button mt-20">
+            Sign In
+          </button>
+          {/* </Link> */}
         </div>
+        <Chat socket={socket} username={username} room={room} />
       </div>
     </section>
   );
