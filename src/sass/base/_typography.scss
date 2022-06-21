@@ -1,0 +1,24 @@
+//BASE
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+a, a:visited, a:active {
+    text-decoration: 0;
+}
+ :root{
+//SPACING
+--spacing-01: 0.1rem;
+--spacing-02: 0.2rem;
+--spacing-03: 0.3rem;
+--spacing-04: 0.4rem;
+--spacing-05: 0.5rem;
+//WIDTH
+--max-width-1170: 1170px;
+--fixed-width-450: 450px;
+--fixed-width-620: 620px;
+}

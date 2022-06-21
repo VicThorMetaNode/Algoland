@@ -1,0 +1,40 @@
+//-----TRANSITIONS DECOR & Co-------
+
+:root{
+//TRANSITION
+--trans-03-line: all 0.3s linear;
+
+//ANIMATION
+--anime-duration: 1s;
+--anime-delay: 1s;
+--anime-repeat: 1;
+
+//BORDERS OPTIONS
+--border-none: none;
+--border-dotted: dotted;
+--border-dashed: dashed;
+--border-solid: solid;
+--border-groove: groove;
+
+//BORDERS WIDTH
+--border-w1: 0.1rem;
+--border-w2: 0.2rem;
+--border-w3: 0.3rem;
+--border-w4: 0.4rem;
+
+//BORDERS RADIUS
+--border-r020: 0.20rem;
+--border-r025: 0.25rem;
+--border-r030: 0.30rem;
+--border-r035: 0.35rem;
+--border-r040: 0.40rem;
+--border-r045: 0.45rem;
+--border-r050: 0.50rem;
+--border-r060: 0.60rem;
+--border-r070: 0.70rem;
+--border-r1: 1rem;
+--border-r2: 2rem;
+--border-r3: 3rem;
+--border-r4: 4rem;
+--border-r5: 5rem;
+}

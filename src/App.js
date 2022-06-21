@@ -11,7 +11,7 @@ import Homepage from "./components/Homepage";
 import Join from "./components/Join/Join";
 import Chat from "./components/Chat/ChatTest";
 
-import "./index.css";
+import "./scss/style.scss";
 
 /* First time the user visit the page, will be redirected to Join & pass login data then will be redirected to Chat  */
 /* Once we have the data, passed through query strings, we render the chat component */

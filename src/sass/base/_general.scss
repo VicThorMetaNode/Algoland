@@ -1,0 +1,77 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aqua;   
+}
+
+
+
+
+:root {
+//MAIN COMBO
+--bg-clr-lime: #A7F432 ;
+--bg-clr-orange: #FF8552;
+--clr-prime-lgt: #E6E6E6;
+--clr-prime-drk: #39393A;
+--clr-alt-olive: #297373;
+--clr-alt-fantastic: #FF5E5B;
+
+//CHAT COMBO--chat-clr-violet-drk: #9984D4 ;
+--chat-clr-violet-lgt: #CAA8F5 ;
+--chat-clr-olive: #465C69 ;
+
+//HYPERLINK COMBO
+--hyperlink-clr-blue: #89adf5;;
+--hyperlink-hover-blue: #5b8df1;
+
+//ALT COLORS
+--clr-black: #000000;
+--clr-outer-space: #2D383A;
+--clr-algo:#1e1e20;
+--clr-ant-dark: #001121;
+--clr-cosmic-blue: #0c0b66;
+--clr-black-x: #000000e1;
+--clr-blue: #2E5894;
+--clr-blue-lg: hsl(215, 53%, 43%);
+--clr-amethyst: #64609A;
+--clr-black: #008080;
+--clr-zil: #01dac1;
+--clr-zil-dark: #009987bc;
+--clr-green: #9DE093;--clr-yellow-green: #C5E17A;
+--clr-middle-green: #4D8C57;
+--clr-green-chrome: #6CA67C;
+--clr-green-jungle: #29AB87;
+--clr-green-forest: #5FA777;
+--clr-eggplant: #614051;
+--clr-cyber-grape: #58427C;
+--clr-lilac: #DB91EF;
+--clr-bubble-gum: #FFD3F8;
+--clr-shampoo:#FFCFF1;
+--clr-red: 	#ED0A3F;
+--clr-brick: #C62D42;
+--clr-orange-red: #FF5349;
+--clr-pink: #FC5A8D;
+--clr-macaroni-cheese:#FFB97B;
+--clr-peach: #FFD0B9;
+--clr-white: #fff;
+--clr-coconut: #FEFEFE;
+--clr-soap: #CEC8EF;
+--clr-cadet:#A9B2C3;
+--clr-silver: #A6A6A6;
+--clr-gar-blue: #C8C8CD;
+--clr-wolf: #D9D6CF;
+--clr-blue-violet: #766EC8;
+--clr-lemon: #FFFF38;
+--clr-canary: #FFFF99;
+--clr-lemon-cream: #FDFF00;
+--clr-daffodil: #FFFF31;
+}

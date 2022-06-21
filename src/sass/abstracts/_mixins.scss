@@ -1,0 +1,8 @@
+//SHADOW
+@mixin shadow-lgt($color) {
+    box-shadow:  0px 5px 10px 5px $color ;
+}
+
+@mixin shadow-fat($color) {
+    box-shadow:  0 5px 15px $color ;
+}
