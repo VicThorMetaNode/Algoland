@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 function ChatTest({ socket, username, room }) {
   //track current message
   const [currentMessage, setCurrentMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
 
-  //send message w/ socket emit
+  //send message w/ socket emit and use async to wait for respond
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
@@ -18,13 +19,16 @@ function ChatTest({ socket, username, room }) {
       };
 
       await socket.emit("send_message", messageData);
+      setMessageList((list) => [...list, messageData]);
+      setCurrentMessage("");
+      // whenever this event is listening, it will setMessageList state to be equal to any list it was before but at the end (...list) it adds the new message that just be sent
     }
   };
 
   //receive message w/ socket emit
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      console.log(data);
+      setMessageList((list) => [...list, data]);
     });
   }, [socket]);
 
@@ -42,11 +46,15 @@ function ChatTest({ socket, username, room }) {
             >
               <div>
                 <div className="message-content">
-                  <p>{messageContent.message} </p>
+                  <p key="message">{messageContent.message}</p>
                 </div>
                 <div className="message-meta">
-                  <p id="time">{messageContent.time}</p>
-                  <p id="author">{messageContent.author}</p>
+                  <p key="time" id="time">
+                    {messageContent.time}
+                  </p>
+                  <p key="author" id="author">
+                    {messageContent.author}
+                  </p>
                 </div>
               </div>
             </div>
@@ -57,7 +65,7 @@ function ChatTest({ socket, username, room }) {
         <input
           type="text"
           value={currentMessage}
-          placeholder="Algolab message"
+          placeholder="AlgoNode message"
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
